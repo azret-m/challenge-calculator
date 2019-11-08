@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "challenge-calculator", "challenge-calculator\challenge-calculator.csproj", "{FD4D0DAF-0644-413C-9F53-E8DFAF257693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD4D0DAF-0644-413C-9F53-E8DFAF257693}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{FD4D0DAF-0644-413C-9F53-E8DFAF257693}.Debug|anycpu.Build.0 = Debug|anycpu
+		{FD4D0DAF-0644-413C-9F53-E8DFAF257693}.Release|anycpu.ActiveCfg = Release|anycpu
+		{FD4D0DAF-0644-413C-9F53-E8DFAF257693}.Release|anycpu.Build.0 = Release|anycpu
+		{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
