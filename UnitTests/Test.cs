@@ -94,5 +94,13 @@ namespace UnitTests
 
             Assert.AreEqual(expected, challengeCalculator.GetSum());
         }
+
+        [Test()]
+        public void NegativeNumbersAreNotSupported()
+        {
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("-1,4,2,-20,30,40,-6");
+
+            Assert.That(() => challengeCalculator.GetSum(), Throws.TypeOf<NegativeNumbersNotSupportedException>());
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using challengecalculator.Exceptions;
+﻿using System.Collections.Generic;
+using challengecalculator.Exceptions;
 
 namespace challengecalculator.Classes
 {
@@ -28,6 +29,8 @@ namespace challengecalculator.Classes
 
         private long CalculateSum(string[] candidateNumbersList)
         {
+            List<long> negativeNumbersList = new List<long>();
+
             long result = 0;
             foreach (string candidateNumber in candidateNumbersList)
             {
@@ -35,11 +38,30 @@ namespace challengecalculator.Classes
 
                 number = canParse ? number : 0;
 
-                result += number;
+                if (IsNegative(number))
+                {
+                    negativeNumbersList.Add(number);
+                }
+                else
+                {
+                    if (negativeNumbersList.Count == 0)
+                    {
+                        result += number;
+                    }
+                }
+            }
+
+            if (negativeNumbersList.Count > 0)
+            {
+                throw new NegativeNumbersNotSupportedException(negativeNumbersList);
             }
 
             return result;
         }
 
+        private bool IsNegative(long number)
+        {
+            return number < 0;
+        }
     }
 }
