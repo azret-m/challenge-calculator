@@ -7,7 +7,7 @@ namespace challengecalculator
     {
         public static void Main(string[] args)
         {
-            string arg = "-1,3,5,6,-9,20,-20";
+            string arg = "8000,1,2,1000,2000,70";
             var challengecalculator = new ChallengeCalculator(arg);
             Console.WriteLine($"Sum Result : {challengecalculator.GetSum()}");          
         }

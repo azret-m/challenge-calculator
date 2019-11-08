@@ -102,5 +102,15 @@ namespace UnitTests
 
             Assert.That(() => challengeCalculator.GetSum(), Throws.TypeOf<NegativeNumbersNotSupportedException>());
         }
+
+        [Test()]
+        public void NumbersGreaterThan1000AreNotSupported()
+        {
+            long expected = 73;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("8000,1,2,1000,2000,70");
+
+            Assert.AreEqual(expected, challengeCalculator.GetSum());
+        }
     }
 }

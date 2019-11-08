@@ -7,6 +7,7 @@ namespace challengecalculator.Classes
     {
         private string inputArgs;
         private char[] delimeters = { ',', '\n' };
+        private const long InvalidNumberRange = 1000;
 
         public ChallengeCalculator(string inputArgs)
         {
@@ -36,7 +37,7 @@ namespace challengecalculator.Classes
             {
                 bool canParse = long.TryParse(candidateNumber, out long number);
 
-                number = canParse ? number : 0;
+                number = canParse && number < InvalidNumberRange ? number : 0;
 
                 if (IsNegative(number))
                 {

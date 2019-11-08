@@ -1,26 +1,28 @@
 ﻿<Properties StartupConfiguration="{BF77B419-2C7E-49DD-AEF2-3CCAAC17DB05}|Unit Tests">
   <MonoDevelop.Ide.ItemProperties.challenge-calculator PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UnitTests/Test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="challenge-calculator/Classes/ChallengeCalculator.cs">
     <Files>
-      <File FileName="challenge-calculator/Program.cs" Line="15" Column="1" />
-      <File FileName="UnitTests/Test.cs" Line="93" Column="91" />
+      <File FileName="challenge-calculator/Program.cs" Line="13" Column="1" />
       <File FileName="challenge-calculator/packages.config" Line="1" Column="1" />
       <File FileName="challenge-calculator/Exceptions/InputValidationException.cs" Line="1" Column="1" />
-      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" Line="61" Column="1" />
+      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" Line="40" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="challenge-calculator" expanded="True">
             <Node name="challenge-calculator" expanded="True">
-              <Node name="Classes" expanded="True" />
+              <Node name="Classes" expanded="True">
+                <Node name="ChallengeCalculator.cs" selected="True" />
+              </Node>
               <Node name="Exceptions" expanded="True" />
             </Node>
-            <Node name="UnitTests" expanded="True">
-              <Node name="Test.cs" selected="True" />
-            </Node>
+            <Node name="UnitTests" expanded="True" />
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -28,7 +30,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/aaa/Projects/challenge-calculator/challenge-calculator/Program.cs" relfile="challenge-calculator/Program.cs" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
