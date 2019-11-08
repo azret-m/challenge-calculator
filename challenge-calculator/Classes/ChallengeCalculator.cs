@@ -35,9 +35,7 @@ namespace challengecalculator.Classes
             long result = 0;
             foreach (string candidateNumber in candidateNumbersList)
             {
-                bool canParse = long.TryParse(candidateNumber, out long number);
-
-                number = canParse && number < InvalidNumberRange ? number : 0;
+                long number = GetParsedNumber(candidateNumber);
 
                 if (IsNegative(number))
                 {
@@ -58,6 +56,15 @@ namespace challengecalculator.Classes
             }
 
             return result;
+        }
+
+        private long GetParsedNumber(string candidateNumber)
+        {
+            bool canParse = long.TryParse(candidateNumber, out long number);
+
+            number = canParse && number < InvalidNumberRange ? number : 0;
+
+            return number;
         }
 
         private bool IsNegative(long number)
