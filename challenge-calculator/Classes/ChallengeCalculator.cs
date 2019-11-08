@@ -21,14 +21,7 @@ namespace challengecalculator.Classes
             {
                 string[] candidateNumbersList = inputArgs.Split(',');
 
-                if (candidateNumbersList.Length > 2)
-                {
-                    throw new InputValidationException();
-                }
-                else
-                {
-                    return CalculateSum(candidateNumbersList);
-                }
+                return CalculateSum(candidateNumbersList);
             }
         }
 

@@ -74,5 +74,15 @@ namespace UnitTests
 
             Assert.AreEqual(expected, challengeCalculator.GetSum());
         }
+
+        [Test()]
+        public void SumOfAllNumbers()
+        {
+            long expected = 108;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("1,2,5,10,20,70");
+
+            Assert.AreEqual(expected, challengeCalculator.GetSum());
+        }
     }
 }
