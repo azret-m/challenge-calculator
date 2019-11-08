@@ -84,5 +84,15 @@ namespace UnitTests
 
             Assert.AreEqual(expected, challengeCalculator.GetSum());
         }
+
+        [Test()]
+        public void NewLineCharacterDelimeterSupport()
+        {
+            long expected = 108;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("1\n2,5,10\n20,70");
+
+            Assert.AreEqual(expected, challengeCalculator.GetSum());
+        }
     }
 }

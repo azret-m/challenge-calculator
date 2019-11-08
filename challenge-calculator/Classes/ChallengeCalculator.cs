@@ -5,6 +5,7 @@ namespace challengecalculator.Classes
     public class ChallengeCalculator
     {
         private string inputArgs;
+        private char[] delimeters = { ',', '\n' };
 
         public ChallengeCalculator(string inputArgs)
         {
@@ -19,7 +20,7 @@ namespace challengecalculator.Classes
             }         
             else
             {
-                string[] candidateNumbersList = inputArgs.Split(',');
+                string[] candidateNumbersList = inputArgs.Split(delimeters);
 
                 return CalculateSum(candidateNumbersList);
             }
