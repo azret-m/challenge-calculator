@@ -9,7 +9,7 @@ namespace challengecalculator
         {
             string arg = "8000,1,2,1000,2000,70";
             var challengecalculator = new ChallengeCalculator(arg);
-            Console.WriteLine($"Sum Result : {challengecalculator.GetSum()}");          
+            Console.WriteLine($"Sum Result : {challengecalculator.Sum()}");          
         }
     }
 }

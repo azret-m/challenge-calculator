@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using challengecalculator.Exceptions;
 
 namespace challengecalculator.Classes
@@ -6,7 +8,9 @@ namespace challengecalculator.Classes
     public class ChallengeCalculator
     {
         private string inputArgs;
-        private char[] delimeters = { ',', '\n' };
+        private List<char> delimeters = new List<char>{ ',', '\n' };
+        private string[] delimeterFormatList = { @"^\/\/(.)\n" };
+
         private const long InvalidNumberRange = 1000;
 
         public ChallengeCalculator(string inputArgs)
@@ -14,7 +18,7 @@ namespace challengecalculator.Classes
             this.inputArgs = inputArgs;
         }
 
-        public long GetSum()
+        public long Sum()
         {
             if (string.IsNullOrEmpty(inputArgs))
             {
@@ -22,7 +26,18 @@ namespace challengecalculator.Classes
             }         
             else
             {
-                string[] candidateNumbersList = inputArgs.Split(delimeters);
+                foreach (var delimeterFormat in delimeterFormatList)
+                {
+                    var matchResult = Regex.Match(inputArgs, delimeterFormat);
+
+                    if (matchResult.Success)
+                    {
+                        var delimeter = Convert.ToChar(matchResult.Groups[1].ToString());
+                        delimeters.Add(delimeter);
+                    }
+                }
+
+                string[] candidateNumbersList = inputArgs.Split(delimeters.ToArray());
 
                 return CalculateSum(candidateNumbersList);
             }

@@ -12,7 +12,7 @@ namespace UnitTests
         {
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("1,2,3,4,5,6");
 
-            Assert.That(() => challengeCalculator.GetSum(), Throws.TypeOf<InputValidationException>());
+            Assert.That(() => challengeCalculator.Sum(), Throws.TypeOf<InputValidationException>());
         }
 
         [Test()]
@@ -22,7 +22,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator(null);
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -32,7 +32,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -42,7 +42,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("454,22");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -52,7 +52,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("400");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -62,7 +62,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("899,dfsdfsdfsf");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -72,7 +72,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("riuwoeru,dfsdfsdfsf");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -82,7 +82,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("1,2,5,10,20,70");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -92,7 +92,7 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("1\n2,5,10\n20,70");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
 
         [Test()]
@@ -100,7 +100,7 @@ namespace UnitTests
         {
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("-1,4,2,-20,30,40,-6");
 
-            Assert.That(() => challengeCalculator.GetSum(), Throws.TypeOf<NegativeNumbersNotSupportedException>());
+            Assert.That(() => challengeCalculator.Sum(), Throws.TypeOf<NegativeNumbersNotSupportedException>());
         }
 
         [Test()]
@@ -110,7 +110,27 @@ namespace UnitTests
 
             ChallengeCalculator challengeCalculator = new ChallengeCalculator("8000,1,2,1000,2000,70");
 
-            Assert.AreEqual(expected, challengeCalculator.GetSum());
+            Assert.AreEqual(expected, challengeCalculator.Sum());
+        }
+
+        [Test()]
+        public void TestNewDelimeterOfASingleCharacter1()
+        {
+            long expected = 7;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("//#\n2#5");
+
+            Assert.AreEqual(expected, challengeCalculator.Sum());
+        }
+
+        [Test()]
+        public void TestNewDelimeterOfASingleCharacter2()
+        {
+            long expected = 102;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("//,\n2,ff,100");
+
+            Assert.AreEqual(expected, challengeCalculator.Sum());
         }
     }
 }
