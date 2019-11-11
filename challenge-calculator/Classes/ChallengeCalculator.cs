@@ -8,8 +8,8 @@ namespace challengecalculator.Classes
     public class ChallengeCalculator
     {
         private string inputArgs;
-        private List<char> delimeters = new List<char>{ ',', '\n' };
-        private string[] delimeterFormatList = { @"^\/\/(.)\n" };
+        private List<string> delimeters = new List<string>{ ",", "\n" };
+        private string[] delimeterFormatList = { @"^\/\/(.)\n", @"^\/\/\[(.*)\]\n" };
 
         private const long InvalidNumberRange = 1000;
 
@@ -32,12 +32,12 @@ namespace challengecalculator.Classes
 
                     if (matchResult.Success)
                     {
-                        var delimeter = Convert.ToChar(matchResult.Groups[1].ToString());
+                        var delimeter = matchResult.Groups[1].ToString();
                         delimeters.Add(delimeter);
                     }
                 }
 
-                string[] candidateNumbersList = inputArgs.Split(delimeters.ToArray());
+                string[] candidateNumbersList = inputArgs.Split(delimeters.ToArray(), StringSplitOptions.None);
 
                 return CalculateSum(candidateNumbersList);
             }

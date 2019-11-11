@@ -132,5 +132,15 @@ namespace UnitTests
 
             Assert.AreEqual(expected, challengeCalculator.Sum());
         }
+
+        [Test()]
+        public void TestNewDelimeterOfAnyLength()
+        {
+            long expected = 66;
+
+            ChallengeCalculator challengeCalculator = new ChallengeCalculator("//[***]\n11***22***33");
+
+            Assert.AreEqual(expected, challengeCalculator.Sum());
+        }
     }
 }

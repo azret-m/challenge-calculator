@@ -1,23 +1,29 @@
 ﻿<Properties StartupConfiguration="{FD4D0DAF-0644-413C-9F53-E8DFAF257693}|Default">
   <MonoDevelop.Ide.ItemProperties.challenge-calculator PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UnitTests/Test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="challenge-calculator/Classes/ChallengeCalculator.cs">
     <Files>
-      <File FileName="challenge-calculator/Program.cs" Line="16" Column="1" />
       <File FileName="challenge-calculator/packages.config" />
-      <File FileName="challenge-calculator/Exceptions/InputValidationException.cs" />
-      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" />
-      <File FileName="UnitTests/Test.cs" Line="21" Column="30" />
+      <File FileName="challenge-calculator/Exceptions/InputValidationException.cs" Line="1" Column="1" />
+      <File FileName="UnitTests/Test.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" Line="12" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="challenge-calculator" expanded="True">
             <Node name="challenge-calculator" expanded="True">
-              <Node name="Classes" expanded="True" />
+              <Node name="Classes" expanded="True">
+                <Node name="ChallengeCalculator.cs" selected="True" />
+              </Node>
               <Node name="Exceptions" expanded="True" />
             </Node>
-            <Node name="UnitTests" expanded="True" selected="True" />
+            <Node name="UnitTests" expanded="True" />
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="challenge-calculator" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
