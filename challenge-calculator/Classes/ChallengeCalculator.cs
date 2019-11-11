@@ -9,7 +9,7 @@ namespace challengecalculator.Classes
     {
         private string inputArgs;
         private List<string> delimeters = new List<string>{ ",", "\n" };
-        private string[] delimeterFormatList = { @"^\/\/(.)\n", @"^\/\/\[(.*)\]\n" };
+        private string[] delimeterFormatList = { @"^\/\/(.)\n", @"^\/\/\[(.*?)\]\n" };
 
         private const long InvalidNumberRange = 1000;
 
