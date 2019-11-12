@@ -1,23 +1,28 @@
 ﻿<Properties StartupConfiguration="{FD4D0DAF-0644-413C-9F53-E8DFAF257693}|Default">
   <MonoDevelop.Ide.ItemProperties.challenge-calculator PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="challenge-calculator/Classes/ChallengeCalculator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UnitTests/Test.cs">
     <Files>
-      <File FileName="challenge-calculator/packages.config" />
-      <File FileName="challenge-calculator/Exceptions/InputValidationException.cs" Line="1" Column="1" />
-      <File FileName="UnitTests/Test.cs" Line="1" Column="1" />
-      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" Line="12" Column="65" />
+      <File FileName="challenge-calculator/Classes/CalculationResult.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Classes/ChallengeCalculator.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Classes/Numbers.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Classes/OperationsFactory.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Classes/Delimeters.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Exceptions/InputValidationException.cs" Line="5" Column="6" />
+      <File FileName="challenge-calculator/Exceptions/NegativeNumbersNotSupportedException.cs" Line="1" Column="1" />
+      <File FileName="challenge-calculator/Program.cs" Line="1" Column="1" />
+      <File FileName="UnitTests/Test.cs" Line="232" Column="95" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="challenge-calculator" expanded="True">
             <Node name="challenge-calculator" expanded="True">
-              <Node name="Classes" expanded="True">
-                <Node name="ChallengeCalculator.cs" selected="True" />
-              </Node>
+              <Node name="Classes" expanded="True" />
               <Node name="Exceptions" expanded="True" />
             </Node>
-            <Node name="UnitTests" expanded="True" />
+            <Node name="UnitTests" expanded="True">
+              <Node name="Test.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

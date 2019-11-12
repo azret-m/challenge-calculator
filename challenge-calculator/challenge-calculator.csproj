@@ -38,6 +38,10 @@
     <Compile Include="Exceptions\InputValidationException.cs" />
     <Compile Include="Classes\ChallengeCalculator.cs" />
     <Compile Include="Exceptions\NegativeNumbersNotSupportedException.cs" />
+    <Compile Include="Classes\OperationsFactory.cs" />
+    <Compile Include="Classes\Delimeters.cs" />
+    <Compile Include="Classes\Numbers.cs" />
+    <Compile Include="Classes\CalculationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

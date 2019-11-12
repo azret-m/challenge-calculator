@@ -1,90 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using challengecalculator.Exceptions;
 
 namespace challengecalculator.Classes
 {
     public class ChallengeCalculator
     {
-        private string inputArgs;
-        private List<string> delimeters = new List<string>{ ",", "\n" };
-        private string[] delimeterFormatList = { @"^\/\/(.)\n", @"^\/\/\[(.*?)\]\n" };
+        private string inputString;
+        private string operation;
+        private long upperBoundNumber;
+        private bool supportNegativeNumbers;
+        private string delimeter;
 
-        private const long InvalidNumberRange = 1000;
-
-        public ChallengeCalculator(string inputArgs)
+        public ChallengeCalculator(
+            string inputString,
+            string operation,
+            string delimeter,
+            bool supportNegativeNumbers = false,
+            long upperBoundNumber = 1000
+        )
         {
-            this.inputArgs = inputArgs;
+            this.inputString = inputString;
+            this.operation = operation;
+            this.delimeter = delimeter;
+            this.supportNegativeNumbers = supportNegativeNumbers;
+            this.upperBoundNumber = upperBoundNumber;
         }
 
-        public long Sum()
+        /*
+         * Executes the caluclation.
+         *
+         * @return CalculationResult
+         */
+        public CalculationResult Calculate()
         {
-            if (string.IsNullOrEmpty(inputArgs))
+            if (string.IsNullOrEmpty(this.inputString))
             {
-                return 0;
-            }         
+                return new CalculationResult()
+                {
+                    Result = 0,
+                    Formula = "0"
+                };
+            }
             else
             {
-                foreach (var delimeterFormat in delimeterFormatList)
-                {
-                    var matchResult = Regex.Match(inputArgs, delimeterFormat);
+                Delimeters delimeters = new Delimeters(this.inputString, this.delimeter);
+                string[] candidateNumbersList = this.inputString.Split(delimeters.Get(), StringSplitOptions.None);
 
-                    if (matchResult.Success)
-                    {
-                        var delimeter = matchResult.Groups[1].ToString();
-                        delimeters.Add(delimeter);
-                    }
-                }
+                Numbers numbers = new Numbers(candidateNumbersList, this.upperBoundNumber, this.supportNegativeNumbers);
+                OperationsFactory operationsFactory = new OperationsFactory(numbers.Get());
 
-                string[] candidateNumbersList = inputArgs.Split(delimeters.ToArray(), StringSplitOptions.None);
-
-                return CalculateSum(candidateNumbersList);
+                return operationsFactory.GetResult(this.operation);
             }
-        }
-
-        private long CalculateSum(string[] candidateNumbersList)
-        {
-            List<long> negativeNumbersList = new List<long>();
-
-            long result = 0;
-            foreach (string candidateNumber in candidateNumbersList)
-            {
-                long number = GetParsedNumber(candidateNumber);
-
-                if (IsNegative(number))
-                {
-                    negativeNumbersList.Add(number);
-                }
-                else
-                {
-                    if (negativeNumbersList.Count == 0)
-                    {
-                        result += number;
-                    }
-                }
-            }
-
-            if (negativeNumbersList.Count > 0)
-            {
-                throw new NegativeNumbersNotSupportedException(negativeNumbersList);
-            }
-
-            return result;
-        }
-
-        private long GetParsedNumber(string candidateNumber)
-        {
-            bool canParse = long.TryParse(candidateNumber, out long number);
-
-            number = canParse && number < InvalidNumberRange ? number : 0;
-
-            return number;
-        }
-
-        private bool IsNegative(long number)
-        {
-            return number < 0;
         }
     }
 }
